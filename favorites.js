@@ -46,8 +46,7 @@ router.delete("/",asyncHandler (async (req, res) => {
 
     const remove = await favoriteCity.findOneAndRemove({name: q});
     if (remove === null) {
-        res.status(404);
-        res.send();
+        res.status(404).send();
         return;
     }
 
